@@ -1,6 +1,5 @@
 'use client';
 
-import { div } from "framer-motion/client";
 import { useEffect, useState } from "react";
 
 interface Metadata {
@@ -14,13 +13,11 @@ interface SiteCardProps {
     url: string;
     view?: "preview" | "opengraph";
     onImageLoad?: () => void;
-
 }
 
 export default function SiteCard({ url, view = "opengraph", onImageLoad }: SiteCardProps) {
     const [metadata, setMetadata] = useState<Metadata | null>(null);
     const [imageLoaded, setImageLoaded] = useState(false);
-
 
     useEffect(() => {
         const fetchMeta = async () => {
@@ -45,38 +42,107 @@ export default function SiteCard({ url, view = "opengraph", onImageLoad }: SiteC
     }, [url, view]);
 
     return (
-        <div onClick={() => window.open(url, "_blank")} className="">
-            <div className="bg-white shadow-md rounded-lg p-4 max-w-4xl w-full m-6 border border-gray-300 card-3d bg-gradient-to-r from-white to-gray-100" >
-                {view === "preview" && (
-                    <iframe src={url} className="w-full h-128 rounded-md" />
-                )}
+        <div
+            onClick={() => window.open(url, "_blank")}
+            className="cursor-pointer"
+        >
+            {/* CARD */}
+            <div className="
+        bg-white 
+        rounded-xl 
+        p-4 
+        w-full 
+        h-[420px] 
+        flex flex-col 
+        border border-gray-300 
+        shadow-md 
+        hover:shadow-xl 
+        hover:scale-[1.02]
+        transition-all duration-300
+        card-3d
+        bg-gradient-to-r from-white to-gray-100
+      ">
 
-                {view === "opengraph" && metadata && (
-                    <div className="flex flex-col gap-4 ">
-                        {metadata.title && <h2 className="text-xl font-semibold truncate">{metadata.title}</h2>}
-                        {metadata.image ? (
-                            <img
-                                src={metadata.image}
-                                alt={metadata.title || "Preview"}
-                                className="w-full h-64 object-cover rounded-md no-3d"
-                                onLoad={() => {
-                                    setImageLoaded(true);
-                                    onImageLoad?.();
-                                }
-
-                                }
-                            />
-                        ) : (
-                            <div className="w-full h-64 flex flex-col-3 items-center justify-center text-gray-500 border rounded-md">
-                                No se encontró imagen OpenGraph
-                            </div>
-                        )}
-                        {metadata.description && <p className="text-gray-600">{metadata.description}</p>}
-
+                {/* IMAGE */}
+                {metadata?.image ? (
+                    <img
+                        src={metadata.image}
+                        alt={metadata.title || "Preview"}
+                        className="
+              w-full 
+              h-48 
+              object-cover 
+              rounded-md 
+              flex-shrink-0
+            "
+                        onLoad={() => {
+                            setImageLoaded(true);
+                            onImageLoad?.();
+                        }}
+                    />
+                ) : (
+                    <div className="
+            w-full 
+            h-48 
+            flex items-center justify-center 
+            text-gray-500 
+            border 
+            rounded-md
+          ">
+                        Sin imagen
                     </div>
                 )}
+
+                {/* TEXT CONTENT */}
+                <div className="flex flex-col flex-1 overflow-hidden mt-3">
+
+                    {/* TITLE */}
+                    <h2 className="
+            text-lg 
+            font-semibold 
+            line-clamp-2
+            text-gray-800
+          ">
+                        {metadata?.title || "Sin título"}
+                    </h2>
+
+                    {/* DESCRIPTION */}
+                    <p className="
+            text-gray-600 
+            text-sm 
+            line-clamp-3 
+            mt-2
+          ">
+                        {metadata?.description || "Sin descripción disponible"}
+                    </p>
+
+                </div>
             </div>
-            <button className="shadow-lg hover:scale-105 transition hover:shadow-xl bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded -translate-y-8 translate-x-6 z-103 relative" onClick={() => window.open(url, "_blank")}>
+
+            {/* BUTTON */}
+            <button
+                onClick={(e) => {
+                    e.stopPropagation(); // evita doble click
+                    window.open(url, "_blank");
+                }}
+                className="
+  relative
+  -translate-y-8
+  mx-auto
+  block
+  bg-blue-500 
+  hover:bg-blue-700 
+  text-white 
+  font-bold 
+  py-2 px-4 
+  rounded-lg 
+  shadow-lg 
+  hover:shadow-xl 
+  hover:scale-105 
+  transition-all duration-300
+  z-102
+"
+            >
                 Visitar Sitio
             </button>
         </div>
