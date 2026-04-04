@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { sliderContent } from "@/data/Sites";
 import SiteCard from "./SiteCard";
+import React from "react";
 
 export default function SliderProjects() {
     const [index, setIndex] = useState(0);
@@ -39,9 +40,13 @@ export default function SliderProjects() {
                     style={{ transform: `translateX(-${index * 100}%)` }}
                 >
                     {sliderContent.map((item, i) => (
-                        
+
                         <div key={i} className="w-full flex-shrink-0 flex items-center justify-center bg-gradient-to-r from-blue-200 to-purple-300 p-4  ">
-                            {item.type === 'ad' ? item.component : <SiteCard url={item.url} />}
+                            {item.type === 'ad' ?
+                                // Clonamos el componente y le pasamos el handler
+                                React.cloneElement(item.component as React.ReactElement<{ onComplete?: () => void }>, { onComplete: next })
+                                : <SiteCard url={item.url} />
+                            }
                         </div>
                     ))}
                 </div>

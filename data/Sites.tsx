@@ -16,7 +16,7 @@ interface SiteContent {
 
 interface AdContent {
   type: "ad";
-  component: React.ReactNode;
+  component: React.ReactElement<{ onComplete?: () => void }>;
 }
 
 type SliderContent = SiteContent | AdContent;
