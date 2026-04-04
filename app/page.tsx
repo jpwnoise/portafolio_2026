@@ -6,6 +6,7 @@ import SiteCard from "./components/SiteCard";
 import { sites } from "@/data/Sites";
 import Image from "next/image";
 import Frameworks from "./components/Frameworks";
+import SliderProjects from "./components/SliderProjects";
 
 const gridCols: Record<number, string> = {
   1: "lg:grid-cols-1",
@@ -79,6 +80,9 @@ export default function Home() {
 
       {/* STACK */}
       <Frameworks />
+
+      {/* SLIDER DE PROYECTOS */}
+      <SliderProjects/>
 
       {/* PROYECTOS */}
       <section className="w-full max-w-6xl bg-gradient-to-r from-gray-200 to-gray-300 p-4 md:p-6 rounded-lg mt-8 border border-gray-400 shadow-xl">
