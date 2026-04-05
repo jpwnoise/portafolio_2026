@@ -121,30 +121,29 @@ export default function SiteCard({ url, view = "opengraph", onImageLoad }: SiteC
 
             {/* BUTTON */}
             <button
-                onClick={(e) => {
-                    e.stopPropagation(); // evita doble click
-                    window.open(url, "_blank");
-                }}
-                className="
-  relative
-  -translate-y-8
-  mx-auto
-  block
-  bg-blue-500 
-  hover:bg-blue-700 
-  text-white 
-  font-bold 
-  py-2 px-4 
-  rounded-lg 
-  shadow-lg 
-  hover:shadow-xl 
-  hover:scale-105 
-  transition-all duration-300
-  z-102
-"
-            >
-                Visitar Sitio
-            </button>
+  onClick={(e) => {
+    e.stopPropagation();
+    window.open(url, "_blank");
+  }}
+  className="
+    relative
+    -translate-y-8
+    mx-auto
+    block
+    text-white 
+    font-bold 
+    py-2 px-4 
+    rounded-lg 
+    shadow-lg 
+    hover:shadow-xl 
+    hover:scale-110
+    transition-all duration-300
+    z-102
+    cta-animate
+  "
+>
+  Visitar Sitio
+</button>
         </div>
     );
 }

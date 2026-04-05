@@ -7,6 +7,7 @@ import { sites } from "@/data/Sites";
 import Image from "next/image";
 import Frameworks from "./components/Frameworks";
 import SliderProjects from "./components/SliderProjects";
+import ContactImage from "./components/ContactImage";
 
 const gridCols: Record<number, string> = {
   1: "lg:grid-cols-1",
@@ -42,31 +43,7 @@ export default function Home() {
       {/* HEADER */}
       <div className="w-full max-w-4xl bg-gradient-to-r from-gray-100 to-gray-300 flex flex-col items-center justify-center p-6 rounded-lg mt-8 border border-gray-400 shadow-lg">
         <div className="relative z-10 group">
-          <section id="contact"  className="
-    absolute
-    opacity-0
-    translate-x-5
-    group-hover:opacity-100
-    group-hover:translate-x-10
-    transition-all duration-300 ease-in-out
-    text-white px-3 py-1 rounded-md 
-  ">
-            <div className="m-1 pl-6 pr-2 pt-2 pb-1 rounded-tr-xl  bg-gray-600">pablodev1@outlook.com</div>
-            <div className="m-1 pl-6 pr-2 pt-2 pb-1 bg-[rgb(100,100,200)]">+52-331-326-2108</div>
-            <div className="m-1 pl-6 pr-2 pt-2 pb-1 bg-blue-600">+52-332-152-8819</div>
-            <div className="m-1 pl-6 pr-2 pt-2 pb-1 rounded-br-xl bg-yellow-600" title="deja un mensaje en esta web">
-              Mensaje web
-            </div>
-          </section>
-          <div className="p-2 rounded-full mb-4 shadow-pulse">
-            <Image
-              src="/pablo.png"
-              alt="pablo"
-              width={100}
-              height={100}
-              className="rounded-full border border-gray-400"
-            />
-          </div>
+          <ContactImage />
         </div>
 
         <h1 className="text-xl md:text-2xl font-bold p-4 text-gray-700 text-center">
@@ -82,7 +59,7 @@ export default function Home() {
       <Frameworks />
 
       {/* SLIDER DE PROYECTOS */}
-      <SliderProjects/>
+      <SliderProjects />
 
       {/* PROYECTOS */}
       <section className="w-full max-w-6xl bg-gradient-to-r from-gray-200 to-gray-300 p-4 md:p-6 rounded-lg mt-8 border border-gray-400 shadow-xl">
