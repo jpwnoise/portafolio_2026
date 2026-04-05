@@ -30,7 +30,7 @@ const ejemploMariscos = () => {
                 transition={{ duration: 0.6 }}
                 className="text-3xl text-gray-800"
             >
-                Por ejemplo{" "}
+                Vendes productos como{" "}
                 <span className="font-bold italic text-red-600">
                     Mariscos
                 </span>
@@ -147,7 +147,7 @@ const pedidosCelular = () => {
                 transition={{ duration: 0.6 }}
                 className="text-3xl text-white font-semibold leading-tight"
             >
-                Recibe pedidos desde tu celular
+                Recibir pedidos desde tu celular
             </motion.p>
 
             <motion.span
@@ -183,7 +183,7 @@ const diseno = () => {
                 transition={{ duration: 0.6 }}
                 className="text-3xl text-gray-800 font-semibold"
             >
-                Diseño atractivo
+                Buscas un diseño atractivo
             </motion.p>
 
             <motion.span
