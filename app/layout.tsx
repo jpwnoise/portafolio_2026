@@ -15,7 +15,24 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Portafolio",
   description: "Portafolio de proyectos personales y profesionales de desarrollo web",
+  openGraph: {
+    title: "Portafolio",
+    description: "Portafolio de proyectos personales y profesionales de desarrollo web",
+    url: "https://portafolio2026-sepia.vercel.app/",
+    siteName: "Portafolio de Pablo Hernández",
+    images: [
+      {
+        url: "https://portafolio2026-sepia.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Portafolio de Pablo Hernández - Desarrollador Fullstack",
+      },
+    ],
+    locale: "es_MX",
+    type: "website",
+  },
 };
+
 
 export default function RootLayout({
   children,
