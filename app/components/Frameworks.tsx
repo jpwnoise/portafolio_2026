@@ -231,7 +231,7 @@ export default function Frameworks() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-gradient-to-r from-gray-200 to-gray-300 p-6 rounded-lg border border-gray-400 shadow-xl space-y-10"
+        className="bg-gradient-to-b from-gray-200 via-gray-400/60 to-gray-300 p-6 rounded-lg border border-gray-400 shadow-xl space-y-10"
       >
         {/* FRONTEND */}
         {renderGrid(frontend, 0)}
