@@ -8,6 +8,7 @@ import Image from "next/image";
 import Frameworks from "./components/Frameworks";
 import SliderProjects from "./components/SliderProjects";
 import ContactImage from "./components/ContactImage";
+import Topbar from "./components/Topbar";
 
 const gridCols: Record<number, string> = {
   1: "lg:grid-cols-1",
@@ -39,21 +40,37 @@ export default function Home() {
 
   return (
     <main className="flex flex-col items-center bg-gray-100 px-4">
+      <Topbar />
 
       {/* HEADER */}
-      <div className="w-full max-w-4xl bg-gradient-to-r from-gray-100 to-gray-300 flex flex-col items-center justify-center p-6 rounded-lg mt-8 border border-gray-400 shadow-lg">
+      <motion.div 
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5,
+          delay: 0.5
+         }}
+        className="w-full max-w-4xl bg-gradient-to-r from-gray-100 to-gray-300 flex flex-col items-center justify-center p-6 rounded-lg mt-8 border border-gray-400 shadow-lg"
+      >
         <div className="relative z-10 group">
           <ContactImage />
         </div>
 
-        <h1 className="text-xl md:text-2xl font-bold p-4 text-gray-700 text-center">
+        <motion.h1 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+        className="text-xl md:text-2xl font-bold p-4 text-gray-700 text-center">
           Ingeniero Pablo Hernández
-        </h1>
+        </motion.h1>
 
-        <h2 className="text-base md:text-xl font-semibold text-gray-600 text-center">
+        <motion.h2 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1.5 }}
+        className="text-base md:text-xl font-semibold text-gray-600 text-center">
           Especializado en Desarrollo Web y Soluciones Digitales
-        </h2>
-      </div>
+        </motion.h2>
+      </motion.div>
 
       {/* STACK */}
       <Frameworks />

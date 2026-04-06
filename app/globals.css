@@ -78,8 +78,6 @@ body {
   color: red;
   background-color: #0a0a0a;
   border: 2px solid #0a0a0a;
-  border-radius: 8px;
-  padding: 10px 20px;
 }
 
 @keyframes pulseGradient {
@@ -117,3 +115,10 @@ body {
   98% { transform: translateX(3px); }
 }
 
+.card {
+  @apply bg-white rounded-xl p-4 w-full h-[420px] flex flex-col border border-gray-300 shadow-md hover:shadow-xl hover:scale-[1.02] transition-all duration-300 bg-gradient-to-r from-white to-gray-100;
+}
+
+.card-button {
+  @apply relative -translate-y-8 mx-auto block text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:shadow-xl hover:scale-110 transition-all duration-300 z-[102] ;
+}

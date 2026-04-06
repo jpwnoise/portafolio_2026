@@ -124,7 +124,11 @@ export default function Frameworks() {
   ];
 
   const renderGrid = (items: Tech[], offset = 0) => (
-    <section className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
+    <motion.section 
+      initial={{ opacity: 0, x: 20 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 2, delay: 1 }}
+    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
       {items.map((item, i) => {
         const index = i + offset;
         return (
@@ -194,7 +198,7 @@ export default function Frameworks() {
           </div>
         );
       })}
-    </section>
+    </motion.section>
   );
 
   return (
@@ -202,7 +206,11 @@ export default function Frameworks() {
       className="mt-12 w-full max-w-6xl mx-auto px-4"
       onClick={() => setActiveIndex(null)}
     >
-      <div className="bg-gradient-to-r from-gray-200 to-gray-300 p-6 rounded-lg border border-gray-400 shadow-xl space-y-10">
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 1 }}
+      className="bg-gradient-to-r from-gray-200 to-gray-300 p-6 rounded-lg border border-gray-400 shadow-xl space-y-10">
 
         {/* FRONTEND */}
         {renderGrid(frontend, 0)}
@@ -215,7 +223,7 @@ export default function Frameworks() {
           {renderGrid(databases, frontend.length)}
         </div>
 
-      </div>
+      </motion.div>
     </div>
   );
 }

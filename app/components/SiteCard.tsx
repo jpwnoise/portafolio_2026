@@ -47,21 +47,7 @@ export default function SiteCard({ url, view = "opengraph", onImageLoad }: SiteC
             className="cursor-pointer"
         >
             {/* CARD */}
-            <div className="
-        bg-white 
-        rounded-xl 
-        p-4 
-        w-full 
-        h-[420px] 
-        flex flex-col 
-        border border-gray-300 
-        shadow-md 
-        hover:shadow-xl 
-        hover:scale-[1.02]
-        transition-all duration-300
-        card-3d
-        bg-gradient-to-r from-white to-gray-100
-      ">
+            <div className="card card-3d">
 
                 {/* IMAGE */}
                 {metadata?.image ? (
@@ -107,12 +93,7 @@ export default function SiteCard({ url, view = "opengraph", onImageLoad }: SiteC
                     </h2>
 
                     {/* DESCRIPTION */}
-                    <p className="
-            text-gray-600 
-            text-sm 
-            line-clamp-3 
-            mt-2
-          ">
+                    <p className="text-gray-600 text-sm line-clamp-5 mt-2 max-w-sm w-full"  >
                         {metadata?.description || "Sin descripción disponible"}
                     </p>
 
@@ -120,30 +101,7 @@ export default function SiteCard({ url, view = "opengraph", onImageLoad }: SiteC
             </div>
 
             {/* BUTTON */}
-            <button
-  onClick={(e) => {
-    e.stopPropagation();
-    window.open(url, "_blank");
-  }}
-  className="
-    relative
-    -translate-y-8
-    mx-auto
-    block
-    text-white 
-    font-bold 
-    py-2 px-4 
-    rounded-lg 
-    shadow-lg 
-    hover:shadow-xl 
-    hover:scale-110
-    transition-all duration-300
-    z-102
-    cta-animate
-  "
->
-  Visitar Sitio
-</button>
+            <button onClick={(e) => { e.stopPropagation(); window.open(url, "_blank"); }}  className="card-button cta-animate"> Visitar Sitio </button>
         </div>
     );
 }
