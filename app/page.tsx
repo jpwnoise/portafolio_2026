@@ -10,6 +10,7 @@ import SliderProjects from "./components/SliderProjects";
 import ContactImage from "./components/ContactImage";
 import Topbar from "./components/Topbar";
 import Footer from "./components/Footer";
+import ContactForm from "./components/Contacform";
 
 const gridCols: Record<number, string> = {
   1: "lg:grid-cols-1",
@@ -127,6 +128,8 @@ export default function Home() {
         </motion.div>
 
       </section>
+
+      <ContactForm />
       <Footer />
     </main>
   );

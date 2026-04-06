@@ -123,23 +123,45 @@ export default function Frameworks() {
     }
   ];
 
+  // 🔥 Variantes para stagger
+  const containerVariants = {
+    hidden: {},
+    show: {
+      transition: {
+        delayChildren: 0.8, // espera a que aparezca la sección
+        staggerChildren: 0.12
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    show: { opacity: 1, y: 0 }
+  };
+
   const renderGrid = (items: Tech[], offset = 0) => (
-    <motion.section 
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 2, delay: 1 }}
-    className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center">
+    <motion.section
+      variants={containerVariants}
+      initial="hidden"
+      animate="show"
+      className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 justify-items-center"
+    >
       {items.map((item, i) => {
         const index = i + offset;
+
         return (
-          <div key={index} className="relative flex justify-center">
-            
+          <motion.div
+            key={index}
+            variants={itemVariants}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+            className="relative flex justify-center"
+          >
             {/* ICONO */}
             <div
               onClick={(e) => {
-  e.stopPropagation(); // 🔥 clave
-  setActiveIndex(index === activeIndex ? null : index);
-}}
+                e.stopPropagation();
+                setActiveIndex(index === activeIndex ? null : index);
+              }}
               className="
                 cursor-pointer
                 hover:-translate-y-3 md:hover:-translate-y-5
@@ -194,8 +216,7 @@ export default function Frameworks() {
                 </motion.div>
               )}
             </AnimatePresence>
-
-          </div>
+          </motion.div>
         );
       })}
     </motion.section>
@@ -206,12 +227,12 @@ export default function Frameworks() {
       className="mt-12 w-full max-w-6xl mx-auto px-4"
       onClick={() => setActiveIndex(null)}
     >
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 1 }}
-      className="bg-gradient-to-r from-gray-200 to-gray-300 p-6 rounded-lg border border-gray-400 shadow-xl space-y-10">
-
+        transition={{ duration: 0.5 }}
+        className="bg-gradient-to-r from-gray-200 to-gray-300 p-6 rounded-lg border border-gray-400 shadow-xl space-y-10"
+      >
         {/* FRONTEND */}
         {renderGrid(frontend, 0)}
 
@@ -222,7 +243,6 @@ export default function Frameworks() {
           </h2>
           {renderGrid(databases, frontend.length)}
         </div>
-
       </motion.div>
     </div>
   );
