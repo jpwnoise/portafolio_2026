@@ -29,7 +29,7 @@ export default function ContactImage() {
 
             {/* TELÉFONO */}
             <button className="
-      bg-gradient-to-r from-blue-600 to-blue-800
+      bg-gradient-to-r from-[rgb(104,117,142)] to-[rgb(74,97,138)]
       text-white px-4 py-2 rounded-lg shadow-md
       opacity-0 translate-y-2
       group-hover:opacity-100 group-hover:translate-y-0
@@ -41,7 +41,7 @@ export default function ContactImage() {
 
             {/* UBICACIÓN */}
             <button className="
-      bg-gradient-to-r from-green-600 to-green-800
+      bg-gradient-to-r from-[rgb(104,142,119)] to-[rgb(69,133,90)]
       text-white px-4 py-2 rounded-lg shadow-md
       opacity-0 translate-y-2
       group-hover:opacity-100 group-hover:translate-y-0
@@ -53,7 +53,7 @@ export default function ContactImage() {
 
             {/* MENSAJE */}
             <button className="
-      bg-gradient-to-r from-yellow-500 to-orange-600
+      bg-gradient-to-r from-[rgb(175,155,103)] to-[rgb(179,130,66)]
       text-white px-4 py-2 rounded-lg shadow-md
       opacity-0 translate-y-2
       group-hover:opacity-100 group-hover:translate-y-0

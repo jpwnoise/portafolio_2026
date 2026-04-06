@@ -9,6 +9,7 @@ import Frameworks from "./components/Frameworks";
 import SliderProjects from "./components/SliderProjects";
 import ContactImage from "./components/ContactImage";
 import Topbar from "./components/Topbar";
+import Footer from "./components/Footer";
 
 const gridCols: Record<number, string> = {
   1: "lg:grid-cols-1",
@@ -39,7 +40,7 @@ export default function Home() {
   const handleImageLoad = () => setLoadedCount(prev => prev + 1);
 
   return (
-    <main className="flex flex-col items-center bg-gray-100 px-4">
+    <main className="flex flex-col items-center bg-linear-to-b from-gray-100 via-blue-100 to-white">
       <Topbar />
 
       {/* HEADER */}
@@ -126,6 +127,7 @@ export default function Home() {
         </motion.div>
 
       </section>
+      <Footer />
     </main>
   );
 }
