@@ -24,6 +24,9 @@ type SliderContent = SiteContent | AdContent;
 export const sliderContent: SliderContent[] = [];
 
 sliderContent.push({ type: "ad", component: <AdNovillero /> });
+sliderContent.push({ type: "site", url: 'https://escenciaequilibrio.vercel.app/' });
+
+sliderContent.push({ type: "ad", component: <AdNovillero /> });
 sliderContent.push({ type: "site", url: 'https://folletoshop.vercel.app/' });
 
 sliderContent.push({ type:'ad', component: <Advertisement /> });

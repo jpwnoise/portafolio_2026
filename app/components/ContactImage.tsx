@@ -1,5 +1,11 @@
 import Image from "next/image";
 
+interface ContactImageProps {
+    width?: number;
+    height?: number;
+    colors?: {}
+}
+
 export default function ContactImage() {
     return (<section className="relative group flex items-center">
 

@@ -12,7 +12,8 @@ export default function Topbar() {
         
         {/* Identidad */}
         <div className="flex flex-col leading-tight">
-          <span className="text-lg font-semibold text-gray-600 dark:text-white">
+          <span className="text-lg font-semibold text-gray-600 dark:text-white font-[var(--font-poppins)]" 
+          style={{ fontFamily: "var(--font-poppins)" }}>
             Pablo Hernández
           </span>
           <span className="text-sm text-gray-500 dark:text-zinc-400">
