@@ -6,7 +6,8 @@ export const sites = [
   'https://musicproducer-vercel.vercel.app/',
   'https://wingsandbites.vercel.app/',
   'https://catalina-teal.vercel.app/',
-  'https://smalle.vercel.app/'
+  'https://smalle.vercel.app/',
+  'https://escenciaequilibrio.vercel.app'
 ];
 
 interface SiteContent {
@@ -23,11 +24,12 @@ type SliderContent = SiteContent | AdContent;
 
 export const sliderContent: SliderContent[] = [];
 
-sliderContent.push({ type: "ad", component: <AdNovillero /> });
-sliderContent.push({ type: "site", url: 'https://escenciaequilibrio.vercel.app/' });
 
 sliderContent.push({ type: "ad", component: <AdNovillero /> });
 sliderContent.push({ type: "site", url: 'https://folletoshop.vercel.app/' });
+
+sliderContent.push({ type: "ad", component: <Advertisement /> });
+sliderContent.push({ type: "site", url: 'https://escenciaequilibrio.vercel.app/' });
 
 sliderContent.push({ type:'ad', component: <Advertisement /> });
 sliderContent.push({ type: "site", url: 'https://musicproducer-vercel.vercel.app/' });  

@@ -27,7 +27,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto mt-16 px-4">
+    <div id="contacto" className="w-full max-w-3xl mx-auto mt-16 px-4">
       
       <motion.div
         initial={{ opacity: 0, y: 30 }}

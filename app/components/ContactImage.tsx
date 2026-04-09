@@ -3,10 +3,11 @@ import Image from "next/image";
 interface ContactImageProps {
     width?: number;
     height?: number;
-    colors?: {}
+    colors?: {},
+    borderColor:string
 }
 
-export default function ContactImage() {
+export default function ContactImage({borderColor = 'border-gray-400'}:ContactImageProps) {
     return (<section className="relative group flex items-center">
 
         {/* 🔵 PANEL DE CONTACTO */}
@@ -82,10 +83,10 @@ export default function ContactImage() {
                 alt="Pablo Hernández"
                 width={200}
                 height={200}
-                className="
-        rounded-full border-4 border-gray-400 
+                className={`
+        rounded-full border-4 ${borderColor}
         shadow-xl
-      "
+       `}
             />
         </div>
 

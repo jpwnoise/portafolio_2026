@@ -72,6 +72,7 @@ export default function ContactImage({ width = 150, height = 150, data = Contact
     group-hover:-translate-x-24
   ">
                 <Image
+                    loading="eager"
                     src="/pablo.png"
                     alt="Pablo Hernández"
                     width={200}

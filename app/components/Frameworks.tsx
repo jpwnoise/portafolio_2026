@@ -156,6 +156,7 @@ export default function Frameworks() {
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="relative flex justify-center"
           >
+            <span className="text-[rgb(50,100,150)] font-bold">{item.name}</span>
             {/* ICONO */}
             <div
               onClick={(e) => {
@@ -238,9 +239,6 @@ export default function Frameworks() {
 
         {/* BASES DE DATOS */}
         <div>
-          <h2 className="text-center text-gray-700 font-semibold mb-4">
-            Bases de Datos
-          </h2>
           {renderGrid(databases, frontend.length)}
         </div>
       </motion.div>
