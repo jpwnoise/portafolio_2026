@@ -17,6 +17,18 @@ const projects = [
     gradient: 'from-pink-600/30 via-purple-700/20 to-indigo-600/30',
   },
   {
+    id: 7,
+    title: 'Folletos Shop V2',
+    fallbackDesc: 'Pescadería Novillero con catálogo premium, carrito animado, checkout por WhatsApp y animaciones GSAP.',
+    tags: ['Next.js', 'GSAP', 'E-Commerce', 'Premium'],
+    emoji: '🦐',
+    category: 'E-Commerce',
+    liveUrl: 'https://folletoshop2.vercel.app/',
+    githubUrl: 'https://github.com/jpwnoise/folleto_shop_2',
+    featured: true,
+    gradient: 'from-ocean-500/30 via-deep-500/20 to-coral-500/30',
+  },
+  {
     id: 2,
     title: 'Music Producer',
     fallbackDesc: 'Plataforma para productores musicales con reproductor de audio, portfolio y sistema de contacto.',
