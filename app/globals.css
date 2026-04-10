@@ -220,3 +220,42 @@ html {
   transform-style: preserve-3d;
   transform: rotateY(5deg) rotateX(0deg);
 }
+
+/* ===== V3 Portfolio Animations ===== */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* GSAP animation targets */
+.hero-badge,
+.hero-title .word,
+.hero-subtitle,
+.hero-cta,
+.hero-scroll-indicator,
+.hero-parallax-bg,
+.animate-on-scroll,
+.skill-bar,
+.project-card,
+.timeline-item,
+.testimonial-card,
+.counter,
+.floating-element {
+  will-change: transform, opacity;
+}

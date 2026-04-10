@@ -9,8 +9,13 @@ import ProjectsGrid from "../components/ProjectGrid";
 
 export default function Home() {
     return (
-        <div className="grid grid-cols-[320px_1fr] min-h-screen">
-        <div className="container-3d sticky top-0 h-screen flex items-center justify-center">
+<div className="grid grid-cols-1 md:grid-cols-[320px_1fr] min-h-screen">
+        <div className="
+  container-3d
+  md:sticky md:top-0
+  md:h-screen
+  flex items-center justify-center
+">
             <motion.section
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
