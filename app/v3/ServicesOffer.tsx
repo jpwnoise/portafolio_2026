@@ -142,12 +142,12 @@ export default function Services() {
                 <div className="mb-6">
                   {hasPromo && (
                     <div className="text-sm text-slate-500 line-through mb-1" style={{ fontFamily: 'var(--font-poppins)' }}>
-                      ${plan.regularPrice.toLocaleString()} MXN
+                      ${plan.regularPrice.toFixed(0)} MXN
                     </div>
                   )}
                   <div className="flex items-baseline gap-1">
                     <span className="text-4xl font-black text-white" style={{ fontFamily: 'var(--font-poppins)' }}>
-                      ${displayPrice.toLocaleString()}
+                      ${displayPrice.toFixed(0)}
                     </span>
                     <span className="text-slate-400 text-sm">MXN</span>
                   </div>
