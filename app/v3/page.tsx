@@ -8,6 +8,7 @@ import SkillsV3 from './Skills';
 import ProjectsV3 from './Projects';
 import ExperienceV3 from './Experience';
 import ServicesV3 from './Services';
+import ServicesOffer from './ServicesOffer';
 import TestimonialsV3 from './Testimonials';
 import ContactV3 from './Contact';
 import FooterV3 from './Footer';
@@ -33,6 +34,7 @@ export default function Page() {
       <ProjectsV3 />
       <ExperienceV3 />
       <ServicesV3 />
+      <ServicesOffer />
       <TestimonialsV3 />
       <ContactV3 />
       <FooterV3 />
