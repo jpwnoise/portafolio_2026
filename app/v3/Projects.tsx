@@ -5,7 +5,31 @@ import { FaExternalLinkAlt, FaGithub, FaArrowLeft, FaArrowRight } from 'react-ic
 
 const projects = [
   {
+    id: 6,
+    title: 'Esencia y Equilibrio',
+    fallbackDesc: 'Plataforma de terapias de flores de Bach con carrusel 3D interactivo, selección de mezclas personalizadas e integración con WhatsApp.',
+    tags: ['Next.js', 'Framer Motion', 'Health'],
+    emoji: '🌿',
+    category: 'Web App',
+    liveUrl: 'https://escenciaequilibrio.vercel.app',
+    githubUrl: '#',
+    featured: true,
+    gradient: 'from-emerald-600/30 via-green-700/20 to-teal-600/30',
+  },
+  {
     id: 1,
+    title: 'Akemi Sushi',
+    fallbackDesc: 'Restaurante de sushi con menú interactivo, carrito de compras, animaciones Lottie y carga optimizada de imágenes.',
+    tags: ['Next.js', 'Framer Motion', 'Lottie', 'Restaurant'],
+    emoji: '🍣',
+    category: 'Web App',
+    liveUrl: 'https://sushirestaurant-psi.vercel.app/',
+    githubUrl: 'https://github.com/jpwnoise/sushi_restaurant',
+    featured: true,
+    gradient: 'from-red-600/30 via-amber-700/20 to-orange-600/30',
+  },
+  {
+    id: 2,
     title: 'Folletos Shop',
     fallbackDesc: 'Tienda en línea con catálogo de productos, carrito de compras y experiencia de usuario optimizada.',
     tags: ['E-Commerce', 'Frontend', 'UI Design'],
@@ -76,30 +100,7 @@ const projects = [
     featured: false,
     gradient: 'from-blue-600/30 via-sky-700/20 to-cyan-600/30',
   },
-  {
-    id: 6,
-    title: 'Esencia y Equilibrio',
-    fallbackDesc: 'Plataforma de terapias de flores de Bach con carrusel 3D interactivo, selección de mezclas personalizadas e integración con WhatsApp.',
-    tags: ['Next.js', 'Framer Motion', 'Health'],
-    emoji: '🌿',
-    category: 'Web App',
-    liveUrl: 'https://escenciaequilibrio.vercel.app',
-    githubUrl: '#',
-    featured: true,
-    gradient: 'from-emerald-600/30 via-green-700/20 to-teal-600/30',
-  },
-  {
-    id: 8,
-    title: 'Akemi Sushi',
-    fallbackDesc: 'Restaurante de sushi con menú interactivo, carrito de compras, animaciones Lottie y carga optimizada de imágenes.',
-    tags: ['Next.js', 'Framer Motion', 'Lottie', 'Restaurant'],
-    emoji: '🍣',
-    category: 'Web App',
-    liveUrl: 'https://sushirestaurant-psi.vercel.app/',
-    githubUrl: 'https://github.com/jpwnoise/sushi_restaurant',
-    featured: true,
-    gradient: 'from-red-600/30 via-amber-700/20 to-orange-600/30',
-  },
+  
 ];
 
 const categories = ['Todos', 'Web App', 'E-Commerce', 'Web'];
