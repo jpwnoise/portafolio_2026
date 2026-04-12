@@ -7,7 +7,8 @@ export const sites = [
   'https://wingsandbites.vercel.app/',
   'https://catalina-teal.vercel.app/',
   'https://smalle.vercel.app/',
-  'https://escenciaequilibrio.vercel.app'
+  'https://escenciaequilibrio.vercel.app',
+  'https://sushirestaurant-psi.vercel.app/'
 ];
 
 interface SiteContent {
@@ -42,3 +43,6 @@ sliderContent.push({ type: "site", url: 'https://catalina-teal.vercel.app/' });
 
 sliderContent.push({ type:'ad', component: <Advertisement /> });
 sliderContent.push({ type: "site", url: 'https://smalle.vercel.app/' });
+
+sliderContent.push({ type:'ad', component: <Advertisement /> });
+sliderContent.push({ type: "site", url: 'https://sushirestaurant-psi.vercel.app/' });

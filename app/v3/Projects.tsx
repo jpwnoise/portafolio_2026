@@ -88,6 +88,18 @@ const projects = [
     featured: true,
     gradient: 'from-emerald-600/30 via-green-700/20 to-teal-600/30',
   },
+  {
+    id: 8,
+    title: 'Akemi Sushi',
+    fallbackDesc: 'Restaurante de sushi con menú interactivo, carrito de compras, animaciones Lottie y carga optimizada de imágenes.',
+    tags: ['Next.js', 'Framer Motion', 'Lottie', 'Restaurant'],
+    emoji: '🍣',
+    category: 'Web App',
+    liveUrl: 'https://sushirestaurant-psi.vercel.app/',
+    githubUrl: 'https://github.com/jpwnoise/sushi_restaurant',
+    featured: true,
+    gradient: 'from-red-600/30 via-amber-700/20 to-orange-600/30',
+  },
 ];
 
 const categories = ['Todos', 'Web App', 'E-Commerce', 'Web'];
