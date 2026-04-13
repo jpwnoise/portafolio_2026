@@ -65,7 +65,7 @@ const projects = [
     gradient: 'from-ocean-500/30 via-deep-500/20 to-coral-500/30',
   },
   {
-    id: 2,
+    id: 9,
     title: 'Music Producer',
     fallbackDesc: 'Plataforma para productores musicales con reproductor de audio, portfolio y sistema de contacto.',
     tags: ['Audio', 'Portfolio', 'Interactive'],
