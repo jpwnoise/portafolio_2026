@@ -13,6 +13,10 @@ const navLinks = [
   { name: 'Contacto', href: '#contact' },
 ];
 
+const externalLinks = [
+  { name: '📊 Stats', href: '/stats' },
+];
+
 export default function NavbarV3() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -64,6 +68,13 @@ export default function NavbarV3() {
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-purple-400 to-cyan-400 group-hover:w-full transition-all duration-300" />
               </button>
             ))}
+            <a
+              href="/stats"
+              className="text-sm text-purple-400 hover:text-purple-300 transition-colors relative group"
+              style={{ fontFamily: 'var(--font-poppins)' }}
+            >
+              📊 Stats
+            </a>
           </div>
 
           {/* Social + hamburger */}
@@ -128,6 +139,15 @@ export default function NavbarV3() {
                     {link.name}
                   </motion.button>
                 ))}
+
+                <a
+                  href="/stats"
+                  className="text-lg text-purple-400 hover:text-purple-300 transition-colors"
+                  style={{ fontFamily: 'var(--font-poppins)' }}
+                  onClick={() => setMobileOpen(false)}
+                >
+                  📊 Estadísticas
+                </a>
 
                 <div className="flex gap-4 mt-8 pt-6 border-t border-white/10">
                   <a href="https://github.com" target="_blank" className="text-slate-400 hover:text-white">

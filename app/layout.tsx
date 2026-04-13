@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Poppins, Great_Vibes} from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -61,6 +62,14 @@ export default function RootLayout({
         {/** */}
         {children}
         <Analytics />
+        
+        {/* Umami Analytics Tracking Script */}
+        <Script
+          id="umami-analytics"
+          strategy="afterInteractive"
+          src={`${process.env.NEXT_PUBLIC_UMAMI_URL || 'https://cloud.umami.is'}/script.js`}
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+        />
       </body>
     </html>
   );
