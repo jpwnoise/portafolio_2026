@@ -33,13 +33,19 @@ export interface UmamiMetric {
   color: string;
 }
 
-async function umamiFetch(path: string, params?: Record<string, string>) {
-  if (!UMAMI_API_TOKEN || !UMAMI_WEBSITE_ID) {
-    console.warn('Umami API not configured. Set UMAMI_API_TOKEN and UMAMI_WEBSITE_ID.');
+async function umamiFetch(path: string, params?: Record<string, string>, overrideWebsiteId?: string) {
+  if (!UMAMI_API_TOKEN) {
+    console.warn('Umami API not configured. Set UMAMI_API_TOKEN.');
     return null;
   }
 
-  const url = new URL(`/api/websites/${UMAMI_WEBSITE_ID}${path}`, UMAMI_BASE_URL);
+  const targetId = overrideWebsiteId || UMAMI_WEBSITE_ID;
+  if (!targetId) {
+    console.warn('No website ID configured.');
+    return null;
+  }
+
+  const url = new URL(`/api/websites/${targetId}${path}`, UMAMI_BASE_URL);
   if (params) {
     Object.entries(params).forEach(([key, value]) => {
       url.searchParams.set(key, value);
@@ -92,7 +98,7 @@ export async function getMetrics(period: string = '30d') {
   return data;
 }
 
-export async function getStats(period: string = '30d'): Promise<{
+export async function getStats(period: string = '30d', websiteId?: string): Promise<{
   metrics: UmamiMetric[];
   pageviews: { date: string; count: number }[];
   topPages: UmamiPageStats[];
@@ -103,10 +109,11 @@ export async function getStats(period: string = '30d'): Promise<{
   const endAt = Date.now();
   const startAt = getStartTimestamp(period);
   const unit = getUnitForPeriod(period);
+  const targetWebsiteId = websiteId || UMAMI_WEBSITE_ID;
 
   const [pageviewsData, metricsData] = await Promise.all([
-    umamiFetch('/pageviews', { startAt: startAt.toString(), endAt: endAt.toString(), unit }),
-    umamiFetch('/metrics', { startAt: startAt.toString(), endAt: endAt.toString() }),
+    umamiFetch('/pageviews', { startAt: startAt.toString(), endAt: endAt.toString(), unit }, targetWebsiteId),
+    umamiFetch('/metrics', { startAt: startAt.toString(), endAt: endAt.toString() }, targetWebsiteId),
   ]);
 
   if (!pageviewsData) {

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { FaExternalLinkAlt, FaGithub, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { FaExternalLinkAlt, FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 
 const projects = [
   {
@@ -353,15 +353,6 @@ export default function ProjectsV3() {
                           >
                             <FaExternalLinkAlt size={12} />
                             Demo
-                          </a>
-                          <a
-                            href={project.githubUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-2 text-sm text-slate-400 hover:text-white transition-colors"
-                          >
-                            <FaGithub size={14} />
-                            Código
                           </a>
                         </div>
                       </div>
