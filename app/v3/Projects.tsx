@@ -29,6 +29,18 @@ const projects = [
     gradient: 'from-red-600/30 via-amber-700/20 to-orange-600/30',
   },
   {
+    id: 8,
+    title: 'Vasos Mágicos',
+    fallbackDesc: 'Tienda de vasos personalizados para niños con carrito de compras, animaciones 3D, efecto de mesa con perspectiva y pedidos por WhatsApp.',
+    tags: ['Next.js', 'React', 'E-Commerce', '3D Effects', 'WhatsApp'],
+    emoji: '🥤',
+    category: 'E-Commerce',
+    liveUrl: 'https://vasos-personalizados.vercel.app/',
+    githubUrl: 'https://github.com/jpwnoise/vasos_magicos',
+    featured: true,
+    gradient: 'from-pink-600/30 via-purple-700/20 to-indigo-600/30',
+  },
+  {
     id: 2,
     title: 'Folletos Shop',
     fallbackDesc: 'Tienda en línea con catálogo de productos, carrito de compras y experiencia de usuario optimizada.',

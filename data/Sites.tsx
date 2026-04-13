@@ -2,13 +2,13 @@ import Advertisement from "@/app/components/Advertisement";
 import AdNovillero from "@/app/components/AdNovillero";
 
 export const sites = [
+  'https://sushirestaurant-psi.vercel.app/',
+  'https://escenciaequilibrio.vercel.app',
   'https://folletoshop.vercel.app/',
   'https://musicproducer-vercel.vercel.app/',
   'https://wingsandbites.vercel.app/',
   'https://catalina-teal.vercel.app/',
   'https://smalle.vercel.app/',
-  'https://escenciaequilibrio.vercel.app',
-  'https://sushirestaurant-psi.vercel.app/'
 ];
 
 interface SiteContent {
