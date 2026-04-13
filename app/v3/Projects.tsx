@@ -35,10 +35,11 @@ const projects = [
     tags: ['Next.js', 'React', 'E-Commerce', '3D Effects', 'WhatsApp'],
     emoji: '🥤',
     category: 'E-Commerce',
-    liveUrl: 'https://vasos-personalizados.vercel.app/',
+    liveUrl: 'https://vasosmagicos.vercel.app/',
     githubUrl: 'https://github.com/jpwnoise/vasos_magicos',
     featured: true,
     gradient: 'from-pink-600/30 via-purple-700/20 to-indigo-600/30',
+    ogImage: 'https://vasosmagicos.vercel.app/og-image.png',
   },
   {
     id: 2,
@@ -268,7 +269,9 @@ export default function ProjectsV3() {
               {filtered.map((project) => {
                 const data = ogData[project.id];
                 const isLoading = loading[project.id];
-                const hasImage = data?.image;
+                // Use manual ogImage first, then fall back to fetched image
+                const hasImage = project.ogImage || data?.image;
+                const imageUrl = project.ogImage || data?.image;
 
                 return (
                   <div
@@ -279,15 +282,15 @@ export default function ProjectsV3() {
                     <div className="bg-slate-800/50 border border-white/5 rounded-2xl overflow-hidden hover:border-purple-500/30 transition-all duration-300 hover:shadow-xl hover:shadow-purple-500/10 h-full">
                       {/* Hero image or fallback */}
                       <div className={`relative h-48 overflow-hidden ${hasImage ? 'bg-slate-700/50' : `bg-gradient-to-br ${project.gradient}`}`}>
-                        {isLoading && (
+                        {isLoading && !project.ogImage && (
                           <div className="absolute inset-0 flex items-center justify-center">
                             <div className="w-8 h-8 border-2 border-purple-400 border-t-transparent rounded-full animate-spin" />
                           </div>
                         )}
                         {hasImage ? (
                           <img
-                            src={data!.image!}
-                            alt={data!.title || project.title}
+                            src={imageUrl!}
+                            alt={data?.title || project.title}
                             className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
                             loading="lazy"
                           />
