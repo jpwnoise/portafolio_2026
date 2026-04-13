@@ -3,7 +3,6 @@
 import { useState, useEffect } from 'react';
 import NavbarV3 from '@/app/v3/Navbar';
 import FooterV3 from '@/app/v3/Footer';
-import { getStats, type UmamiMetric } from '@/lib/umami';
 
 const websiteConfigs = [
   { id: 'portafolio', name: 'Portafolio', umamiId: '2b67eb65-7558-4e3c-80a1-6df52e74f207', color: 'from-purple-500 to-cyan-500', emoji: '💼' },
@@ -18,6 +17,24 @@ const periodOptions = [
   { label: '30d', value: '30d' },
   { label: '90d', value: '90d' },
 ];
+
+interface Metric {
+  label: string;
+  value: number;
+  icon: string;
+  color: string;
+}
+
+interface PageStat {
+  x: string;
+  y: number;
+}
+
+interface StatsResponse {
+  metrics: Metric[];
+  pageviews: { date: string; count: number }[];
+  topPages: PageStat[];
+}
 
 interface MetricCardProps {
   icon: string;
@@ -45,16 +62,24 @@ function MetricCard({ icon, label, value, color, index }: MetricCardProps) {
 export default function DashboardPage() {
   const [period, setPeriod] = useState('30d');
   const [selectedSite, setSelectedSite] = useState<string | null>(null);
-  const [stats, setStats] = useState<Awaited<ReturnType<typeof getStats>>>(null);
+  const [stats, setStats] = useState<StatsResponse | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     setLoading(true);
     const site = websiteConfigs.find(w => w.id === selectedSite);
-    getStats(period, site?.umamiId).then((data) => {
-      setStats(data);
-      setLoading(false);
-    });
+    const websiteId = site?.umamiId || '';
+    
+    fetch(`/api/stats?period=${period}&websiteId=${websiteId}`)
+      .then(res => res.json())
+      .then((data: StatsResponse) => {
+        setStats(data);
+        setLoading(false);
+      })
+      .catch(() => {
+        setStats(null);
+        setLoading(false);
+      });
   }, [period, selectedSite]);
 
   return (
@@ -129,9 +154,9 @@ export default function DashboardPage() {
           {!loading && !stats && (
             <div className="text-center py-16">
               <div className="text-6xl mb-4">🔒</div>
-              <h3 className="text-xl font-bold text-white mb-2">Estadísticas no configuradas</h3>
+              <h3 className="text-xl font-bold text-white mb-2">Error al cargar</h3>
               <p className="text-slate-400 max-w-md mx-auto">
-                Configura el UMAMI_API_TOKEN para ver las métricas.
+                Verifica que el UMAMI_API_TOKEN esté configurado correctamente en Vercel.
               </p>
             </div>
           )}
