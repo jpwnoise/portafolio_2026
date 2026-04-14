@@ -29,14 +29,15 @@ const greatVibes = Great_Vibes({
 export const metadata: Metadata = {
   title: "Portafolio",
   description: "Portafolio de proyectos personales y profesionales de desarrollo web",
+  metadataBase: new URL("https://pablodev.tech"),
   openGraph: {
     title: "Portafolio",
     description: "Portafolio de proyectos personales y profesionales de desarrollo web",
-    url: "https://portafolio2026-sepia.vercel.app/",
+    url: "/",
     siteName: "Portafolio de Pablo Hernández",
     images: [
       {
-        url: "https://portafolio2026-sepia.vercel.app/og-image.png",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Portafolio de Pablo Hernández - Desarrollador Fullstack",
